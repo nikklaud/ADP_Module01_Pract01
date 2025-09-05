@@ -2,11 +2,19 @@ namespace Module01Pract01;
 
 public class Vehicle
 {
-    private int Year {get; set;}
-    private string Model {get; set;}
-    private string Mark {get; set;}
+    public int Year {get; }
+    public string Model {get; }
+    public string Mark {get; }
 
-    public void StartEngine { get; }
+    public void StartEngine()
+    {
+        Console.WriteLine("Engine start");
+    }
+
+    public void StopEngine()
+    {
+        Console.WriteLine("5 minutes ti din ti din engine kaput");
+    }
 
     public Vehicle(int year, string model, string mark)
     {
@@ -14,5 +22,4 @@ public class Vehicle
         this.Model = model;
         this.Mark = mark;
     }
-    
 }

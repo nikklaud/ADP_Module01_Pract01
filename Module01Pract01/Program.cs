@@ -5,7 +5,10 @@ class Program
     public static void Main(string[] args)
     {
         Vehicle v = new Vehicle(2000, "maybach", "mers");
+        Vehicle v2 = new Vehicle(2001, "hello ", "jhsjs");
         Console.WriteLine("Hello World!");
-        Console.WriteLine(v.ToString());
+        v.StartEngine();
+        v.StopEngine();
+        Console.WriteLine(v2.Model);
     }
 }
