@@ -8,18 +8,19 @@ public class Program
         Car car2 = new Car(1993, "Forester", "Subaru", 5, "Manual");
         Motorcycle moto = new Motorcycle(2019, "R1", "Yamaha", "Sportbyke", false);
 
-        Garage garage1 = new Garage { id = 1 };
+        Garage garage1 = new Garage(1);
         garage1.AddVehicle(car1);
         garage1.AddVehicle(moto);
 
-        Garage garage2 = new Garage { id = 2 };
+        Garage garage2 = new Garage(1);
         garage2.AddVehicle(car2);
 
         Fleet fleet = new Fleet();
         fleet.AddGarage(garage1);
         fleet.AddGarage(garage2);
 
-        garage1.CheckList();
+       garage1.CheckList();
+       Console.WriteLine("-------------------");
         garage2.CheckList();
 
         var foundGarage =  fleet.SearchVehicle(car2);
@@ -32,5 +33,6 @@ public class Program
         {
             Console.WriteLine($"Byke {moto.Model} has been founded in garage #{foundGarage.id}");
         }
+        
     }
 }

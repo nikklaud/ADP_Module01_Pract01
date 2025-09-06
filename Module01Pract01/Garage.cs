@@ -19,12 +19,16 @@ public class Garage
         Console.WriteLine($"Vehicle {vehicle.Model} has been removed");
     }
 
-    public Vehicle CheckList()
+    public Garage(int id)
+    {
+        this.id = id;
+    }
+
+    public void CheckList()
     {
         foreach (var vehicle in this.Vehicles)
         {
-            return vehicle;
+             Console.WriteLine(vehicle.Model);
         }
-        return null;
     }
 }
