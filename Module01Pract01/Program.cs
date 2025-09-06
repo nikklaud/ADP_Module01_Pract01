@@ -1,12 +1,36 @@
 ﻿namespace Module01Pract01;
 
-class Program
+public class Program
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        Garage garage = new Garage();
-        Garage garage2 = new Garage();
-        Car c = new Car(2000, "hell", "har", 5, "linear");
-        
+        Car car1 = new Car(2020, "Camry75", "Toyota", 4, "Automatic");
+        Car car2 = new Car(1993, "Forester", "Subaru", 5, "Manual");
+        Motorcycle moto = new Motorcycle(2019, "R1", "Yamaha", "Sportbyke", false);
+
+        Garage garage1 = new Garage { id = 1 };
+        garage1.AddVehicle(car1);
+        garage1.AddVehicle(moto);
+
+        Garage garage2 = new Garage { id = 2 };
+        garage2.AddVehicle(car2);
+
+        Fleet fleet = new Fleet();
+        fleet.AddGarage(garage1);
+        fleet.AddGarage(garage2);
+
+        garage1.CheckList();
+        garage2.CheckList();
+
+        var foundGarage =  fleet.SearchVehicle(car2);
+        if (foundGarage != null)
+        {
+            Console.WriteLine($"Car {car2.Model} has been founded in garage #{foundGarage.id}");
+        }
+        foundGarage = fleet.SearchVehicle(moto);
+        if (foundGarage != null)
+        {
+            Console.WriteLine($"Byke {moto.Model} has been founded in garage #{foundGarage.id}");
+        }
     }
 }

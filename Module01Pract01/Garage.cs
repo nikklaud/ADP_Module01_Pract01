@@ -2,32 +2,29 @@ using System.Collections;
 
 namespace Module01Pract01;
 
-public class Garage : IEnumerable
+public class Garage 
 {
-    private List<Vehicle> vehicles = new List<Vehicle>();
+    public readonly List<Vehicle> Vehicles = new List<Vehicle>();
+    public int id {get; }
 
     public void AddVehicle(Vehicle vehicle)
     {
-        this.vehicles.Add(vehicle);
+        this.Vehicles.Add(vehicle);
         Console.WriteLine($"Vehicle {vehicle.Model} has been added");
     }
 
     public void RemoveVehicle(Vehicle vehicle)
     {
-        this.vehicles.Remove(vehicle);
+        this.Vehicles.Remove(vehicle);
         Console.WriteLine($"Vehicle {vehicle.Model} has been removed");
     }
 
-    public void CheckList()
+    public Vehicle CheckList()
     {
-        foreach (var vehicle in this.vehicles)
+        foreach (var vehicle in this.Vehicles)
         {
-            Console.WriteLine(vehicle.Model);
+            return vehicle;
         }
-    }
-
-    public IEnumerator GetEnumerator()
-    {
-        throw new NotImplementedException();
+        return null;
     }
 }
